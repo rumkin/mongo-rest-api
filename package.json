@@ -1,0 +1,49 @@
+{
+  "main": "build/index.js",
+  "scripts": {
+    "build": "[ -d build ] && rm -rf build; cp -r src build",
+    "start": "npm run build && node .",
+    "cov": "npm run build && istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
+    "test": "npm run build && mocha test/**.spec.js",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^4.0.0",
+    "hall": "^0.5.2",
+    "keyget": "^1.0.1",
+    "lodash": "^4.17.4",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.16.1",
+    "connect": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mongodb": "^2.2.22",
+    "node-fetch": "^1.6.3",
+    "should": "^11.2.0"
+  },
+  "name": "mongo-rest-api",
+  "version": "0.1.0",
+  "description": "Mongo database REST API driver",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rumkin/mongo-rest-api.git"
+  },
+  "keywords": [
+    "mongo",
+    "rest",
+    "api",
+    "http",
+    "middleware"
+  ],
+  "author": "dev@rumk.in",
+  "bugs": {
+    "url": "https://github.com/rumkin/mongo-rest-api/issues"
+  },
+  "homepage": "https://github.com/rumkin/mongo-rest-api#readme"
+}
